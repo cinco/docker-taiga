@@ -64,7 +64,7 @@ ENV LC_TYPE en_US.UTF-8
 ENV TAIGA_SSL False
 ENV TAIGA_SSL_BY_REVERSE_PROXY True
 ENV TAIGA_ENABLE_EMAIL True
-ENV TAIGA_HOSTNAME localhost
+ENV TAIGA_HOSTNAME pista.atdsdop.com
 ENV TAIGA_SECRET_KEY "oCy7cWMjESJYesKPaitUETYU7ZfsCodz2UpcWiiytoPY6wFZYXhFHDrynr3bHo"
 
 RUN python manage.py collectstatic --noinput
