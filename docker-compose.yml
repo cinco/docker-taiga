@@ -4,7 +4,7 @@ services:
   taiga:
     build: .
     ports:
-      - 80:80
+      - 8088:80
       # - 443:443 # To enable SSL, uncomment this line
     depends_on:
       - postgres
@@ -15,13 +15,13 @@ services:
 
       # If you'd like to store the configuration outside of the container,
       # uncomment this volume. This allows for easy changes to the configuration.
-      # - ./conf/taiga:/taiga
+      - ./conf/taiga:/taiga
 
       # - ./ssl.crt:/etc/nginx/ssl/ssl.crt:ro # To enable SSL, uncomment this line
       # - ./ssl.key:/etc/nginx/ssl/ssl.key:ro # To enable SSL, uncomment this line
     environment:
       # Your hostname (REQUIRED)
-      TAIGA_HOSTNAME: localhost
+      TAIGA_HOSTNAME: pista.atdsdop.com
 
       # Database settings
       # To use an external database, simply update these and remove the postgres
@@ -29,26 +29,26 @@ services:
       TAIGA_DB_NAME: taigadb
       TAIGA_DB_HOST: postgres
       TAIGA_DB_USER: postgres
-      TAIGA_DB_PASSWORD: password
+      TAIGA_DB_PASSWORD: PKv8KrFES5QoGbykWAHdN4HA9UxRiCfEWkuC3XWXGXcrxvEUrP5k4kXT634SZ8
       TAIGA_SLEEP: 15 # when the db comes up from docker, it is usually too quick
 
       # TAIGA_SSL: True # To enable SSL, uncomment this line
-      # TAIGA_SSL_BY_REVERSE_PROXY: True # To enable SSL, handling by a reverse proxy, uncomment this
+      TAIGA_SSL_BY_REVERSE_PROXY: True # To enable SSL, handling by a reverse proxy, uncomment this
 
       # To use an external SMTP for emails, fill in these values:
-      # TAIGA_ENABLE_EMAIL: True
-      # TAIGA_EMAIL_FROM: no-reply@taiga.mycompany.net
-      # TAIGA_EMAIL_USE_TLS: True
-      # TAIGA_EMAIL_HOST: smtp.google.com
-      # TAIGA_EMAIL_PORT: 587
-      # TAIGA_EMAIL_USER: me@gmail.com
-      # TAIGA_EMAIL_PASS: super-secure-pass phrase thing!
+      TAIGA_ENABLE_EMAIL: True
+      TAIGA_EMAIL_FROM: web@atdsdop.com
+      TAIGA_EMAIL_USE_TLS: True
+      TAIGA_EMAIL_HOST: box.cincoeuzebio.com
+      TAIGA_EMAIL_PORT: 587
+      TAIGA_EMAIL_USER: web@atdsdop.com
+      TAIGA_EMAIL_PASS: super!
 
   postgres:
     image: postgres
     environment:
       POSTGRES_DB: taigadb
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: PKv8KrFES5QoGbykWAHdN4HA9UxRiCfEWkuC3XWXGXcrxvEUrP5k4kXT634SZ8
       POSTGRES_USER: postgres
     ports:
       - 5432
