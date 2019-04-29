@@ -8,9 +8,9 @@ services:
       # - 443:443 # To enable SSL, uncomment this line
     depends_on:
       - postgres
-      - taiga-rabbit:rabbit
-      - taiga-redis:redis
-      - taiga-events:events
+      - taiga-rabbit
+      - taiga-redis
+      - taiga-events
     volumes:
       # I recommend specifying a volume that maps to taiga's media,
       # this way uploaded files are not lost during upgrades of the taiga image
