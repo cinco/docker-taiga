@@ -36,13 +36,13 @@ services:
       TAIGA_SSL_BY_REVERSE_PROXY: True # To enable SSL, handling by a reverse proxy, uncomment this
 
       # To use an external SMTP for emails, fill in these values:
-      TAIGA_ENABLE_EMAIL: true
-      TAIGA_EMAIL_FROM: web@atdsdop.com
-      TAIGA_EMAIL_USE_TLS: true
-      TAIGA_EMAIL_HOST: box.cincoeuzebio.com
-      TAIGA_EMAIL_PORT: 587
-      TAIGA_EMAIL_USER: web@atdsdop.com
-      TAIGA_EMAIL_PASS: super!
+      # TAIGA_ENABLE_EMAIL: true
+      # TAIGA_EMAIL_FROM: web@atdsdop.com
+      # TAIGA_EMAIL_USE_TLS: true
+      # TAIGA_EMAIL_HOST: box.cincoeuzebio.com
+      # TAIGA_EMAIL_PORT: 587
+      # TAIGA_EMAIL_USER: web@atdsdop.com
+      # TAIGA_EMAIL_PASS: super!
 
   postgres:
     image: postgres
